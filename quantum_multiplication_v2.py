@@ -1,3 +1,6 @@
+import qiskit
+import numpy as np
+
 def quantum_multiplication(multiplicand, multiplier):
   """
   Performs quantum multiplication of two numbers.
