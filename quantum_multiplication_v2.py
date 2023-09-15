@@ -1,6 +1,3 @@
-import qiskit
-import numpy as np
-
 def quantum_multiplication(multiplicand, multiplier):
   """
   Performs quantum multiplication of two numbers.
@@ -22,9 +19,18 @@ def quantum_multiplication(multiplicand, multiplier):
   circuit.x(q[0])  # Set the multiplicand to |1>.
   circuit.x(q[1])  # Set the multiplier to |1>.
 
-  # Create the QFT multiplication circuit.
-  circuit.qft(q)
+  # Add an Hadamard gate to each of the input qubits.
+  circuit.h(q[0])
+  circuit.h(q[1])
 
+  # Create the QFT multiplication circuit.
+  qft_circuit = qiskit.circuit.library.QFT(4)
+    
+  # Convert the QasmQobj object to a QuantumCircuit object.
+
+  # Combine the two circuits.
+  #circuit += qft_circuit
+  circuit.compose(qft_circuit)
   # Measure the output qubits.
   circuit.measure(q, c)
 
@@ -33,6 +39,7 @@ def quantum_multiplication(multiplicand, multiplier):
   result = job.result()
 
   # The product is the binary representation of the measured state.
-  product = np.binary_repr(result.get_counts()['0000'][0], width=4)
+  product = format(result.get_counts().get('0000', 0), '04b')
+
 
   return int(product, 2)
