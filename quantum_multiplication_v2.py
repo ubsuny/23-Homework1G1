@@ -25,6 +25,7 @@ def quantum_multiplication(multiplicand, multiplier):
   # Add an Hadamard gate to each of the input qubits.
   circuit.h(q[0])
   circuit.h(q[1])
+<<<<<<< HEAD:quantum_multiplication.py
 
   # Create the QFT multiplication circuit.
   qft_circuit = qiskit.assemble(qiskit.circuit.library.QFT(4))
@@ -34,7 +35,17 @@ def quantum_multiplication(multiplicand, multiplier):
 
   # Combine the two circuits.
   circuit += qft_circuit
+=======
+>>>>>>> pr/17:quantum_multiplication_v2.py
 
+  # Create the QFT multiplication circuit.
+  qft_circuit = qiskit.circuit.library.QFT(4)
+    
+  # Convert the QasmQobj object to a QuantumCircuit object.
+
+  # Combine the two circuits.
+  #circuit += qft_circuit
+  circuit.compose(qft_circuit)
   # Measure the output qubits.
   circuit.measure(q, c)
 
@@ -43,7 +54,8 @@ def quantum_multiplication(multiplicand, multiplier):
   result = job.result()
 
   # The product is the binary representation of the measured state.
-  product = np.binary_repr(result.get_counts()['0000'][0], width=4)
+  product = format(result.get_counts().get('0000', 0), '04b')
+
 
 
   return int(product, 2)
