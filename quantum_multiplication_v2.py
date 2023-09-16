@@ -13,26 +13,33 @@ def quantum_multiplication(multiplicand, multiplier):
     The product of the two numbers.
   """
 
+  # Adding these variables to clean up a little. The -2 is because of how
+  # python expresses binary numbers
+  multiplicandBinLen = len(bin(multiplicand)) - 2
+  multiplierBinLen = len(bin(multiplier)) - 2
+
   # Initialize the registers and quantum circuit.
-  q = qiskit.QuantumRegister(4)
-  c = qiskit.ClassicalRegister(4)
+  q = qiskit.QuantumRegister(8)
+  c = qiskit.ClassicalRegister(8)
   circuit = qiskit.QuantumCircuit(q, c)
 
   # Encode the values on to the Operands.
-  circuit.x(q[0])  # Set the multiplicand to |1>.
-  circuit.x(q[1])  # Set the multiplier to |1>.
+  for i in range(multiplicandBinLen):
+    print(bin(multiplicand)[len(bin(multiplicand))-1-i])
+    if int(bin(multiplicand)[len(bin(multiplicand))-1-i]) == 1:
+      circuit.x(q[i])
+
+  for i in range(multiplierBinLen):
+    print(int(bin(multiplier)[len(bin(multiplier))-1-i]))
+    if int(bin(multiplier)[len(bin(multiplier))-1-i]) == 1:
+      circuit.x(q[i + 4])
 
   # Add an Hadamard gate to each of the input qubits.
-  circuit.h(q[0])
-  circuit.h(q[1])
+  circuit.h(q)
 
   # Create the QFT multiplication circuit.
-  qft_circuit = qiskit.circuit.library.QFT(4)
-    
-  # Convert the QasmQobj object to a QuantumCircuit object.
-
-  # Combine the two circuits.
-  #circuit += qft_circuit
+  qft_circuit = qiskit.circuit.library.QFT(8)
+  
   circuit.compose(qft_circuit)
   # Measure the output qubits.
   circuit.measure(q, c)
@@ -42,7 +49,6 @@ def quantum_multiplication(multiplicand, multiplier):
   result = job.result()
 
   # The product is the binary representation of the measured state.
-  product = format(result.get_counts().get('0000', 0), '04b')
-
+  product = format(result.get_counts().get('00000000', 0), '08b')
 
   return int(product, 2)
