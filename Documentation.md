@@ -35,7 +35,13 @@ https://quantum-computing.ibm.com/
    - The quantum circuit is executed on a quantum simulator (`qasm_simulator`) using Qiskit's `execute` function. The `shots` parameter specifies the number of times the circuit is executed (in this case, 2000 times).
    - The measurement results are obtained from the simulator.
 
-**Quantum Algorithm**
+**Acknowledgment.**
+I aknowledge all my group members for working on this project. As it was done on a collaborative way. We are also thankful to the other groups who helped time to time. And also our instructor for the course, he help in making it happen. 
+**References**
+Most of the help was taken from the IMP quantum computing plateform and also different AI tookl like Chatgpt bard and also google colab was used for checking the code. 
+
+
+
 
 
 
