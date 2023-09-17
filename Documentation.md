@@ -36,9 +36,8 @@ https://quantum-computing.ibm.com/
    - The measurement results are obtained from the simulator.
 
 **Acknowledgment.**
-I aknowledge all my group members for working on this project. As it was done on a collaborative way. We are also thankful to the other groups who helped time to time. And also our instructor for the course, he help in making it happen. 
-**References**
-Most of the help was taken from the IMP quantum computing plateform and also different AI tookl like Chatgpt bard and also google colab was used for checking the code. 
+Quantum computers work in reversable, while classical is irreversible . 
+I acknowledge all my group members for working on this project. As it was done in a collaborative way. We are also thankful to the other groups who helped from time to time. And also, our instructor for the course, he helps in making it happen. References Most of the help was taken from the IMP quantum computing platform and different AI tool like ChatGPT bard and googlecolab was used for checking the code. 
 
 
 
