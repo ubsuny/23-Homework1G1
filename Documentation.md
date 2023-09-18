@@ -36,7 +36,27 @@ https://quantum-computing.ibm.com/
    - The measurement results are obtained from the simulator.
   
    **- Unit test.**
+Unit test is performed, with different examples like belove,
+         # Test cases with expected results
+    test_cases = [
+        (100, 100, 10000),  # 100 * 100 = 10000
+        (20 ,531, 10620),  # 20 * 531 = 10620
+        (77, 45, 3465),  # 77 * 45 = 3465
+        (13, 93, 1209),  # 13 * 93 = 1209
 
+# Test cases with negative numbers
+    test_cases = [
+        (-3, -5, 15),  # -3 * -5 = 15
+        (-5, -5, 25),  # -5 * -5 = 25
+        (-2, -5, 10),  # -2 * -5 = 10
+
+
+        # Test cases with mixed numbers
+    test_cases = [
+        (-3, 5, -15),  # -3 * 5 = -15
+        (3, -5, -15),  # 3 * -5 = -15
+        (3, -2, -6),  # 3 * -2 = -6
+   
 
 
    **Example**
