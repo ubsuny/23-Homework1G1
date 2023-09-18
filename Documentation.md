@@ -57,9 +57,7 @@ Unit test is performed, with different examples like belove,
         (3, -5, -15),  # 3 * -5 = -15
         (3, -2, -6),  # 3 * -2 = -6
    
-
-
-   **Example**
+In the unittest file, you can find out which numbers work and which don't
 
 **Acknowledgment.** 
 I acknowledge all my group members for working on this project. As it was done in a collaborative way. We are also thankful to the other groups who helped from time to time. And also, our instructor for the course, he helps in making it happen. References Most of the help was taken from the IMP quantum computing platform and different AI tool like ChatGPT bard and googlecolab was used for checking the code. 
@@ -68,7 +66,9 @@ I acknowledge all my group members for working on this project. As it was done i
 https://www.scienceworld.ca/stories/ho-do-quantum-computers-work/?gclid=Cj0KCQjwx5qoBhDyARIsAPbMagDCv1G_AWs_S1r2IZ1MsKoGVUzE1QfXoCBwM9vu_t5am7nMZZTeu64aAkLwEALw_wcB
 https://quantum-computing.ibm.com/
 https://quantumcomputinguk.org/tutorials/multiplication-on-quantum-computers-with-qiskit
+
 Chatgpt
+
 Bard
 
 
